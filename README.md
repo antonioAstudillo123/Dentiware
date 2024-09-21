@@ -7,60 +7,29 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Sobre el proyecto
+Sistema diseñado para gestionar las funciones esenciales de la clínica de mi amigo Armando. Entre las funcionalidades incluidas se encuentran el registro de pacientes, la creación y gestión de citas, así como el seguimiento detallado de los pagos realizados por cada paciente dentro de la clínica.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Caracteristicas del proyecto
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Este proyecto se desarrollará utilizando Laravel como base, complementado con Livewire, Alpine.js y WireUI para una experiencia interactiva y dinámica. Para el diseño de los formularios, se utilizarán Bootstrap y la plantilla de administración AdminLTE, asegurando una interfaz intuitiva y moderna.
 
-## Learning Laravel
+En esta primera versión, los requerimientos se enfocan en registrar pacientes, gestionar citas y proporcionar un detalle completo de cada pago realizado por los pacientes.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Mejorar que se le pretenden añadir al sistema
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Historial de tratamientos dentales. Registrar los tratamientos dentales realizados a cada paciente junto con la fecha y observaciones del dentista.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Recordatorios automáticos de citas. Implementar un sistema que envíe recordatorios automáticos a los pacientes a través de correo electronico sobre
+sus proximas citas. 
 
-## Laravel Sponsors
+Control de inventario dental: Implementar un sistema para gestionar el inventario de productos dentales, como anestésicos, herramientas quirurgicas
+materiales de obturación, etc. Con alertas automaticas para reabastecimiento cuando el stock esté bajo. 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Facturacion electronica. Integrar un sistema de facturacion electrónica para emitir comprobantes fiscales conforme a las normativas locales. 
 
-### Premium Partners
+Generacion de reportes clinicos: Facilitar la creacion de reportes sobre la cantidad de tratamientos realizados, ingresos generados por mes, y 
+otros indicadores de rendimientos 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
