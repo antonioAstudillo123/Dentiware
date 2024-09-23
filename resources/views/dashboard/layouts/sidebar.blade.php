@@ -28,7 +28,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="{{ route('pacientes.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gestionar pacientes</p>
                 </a>
