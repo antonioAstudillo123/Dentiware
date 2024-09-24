@@ -10,6 +10,7 @@
 	<meta name="author" content="Antonio Astudillo"/>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
+
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
 	<link href="//fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700&display=swap" rel="stylesheet">
 </head>

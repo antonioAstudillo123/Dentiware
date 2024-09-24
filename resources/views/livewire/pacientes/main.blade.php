@@ -28,6 +28,11 @@
             </div>
         </div>
 
+        <div x-show="showDetallePaciente">
+            <livewire:pacientes.detalle-paciente />
+        </div>
+
+
     </div>
 
 </div>
@@ -38,6 +43,7 @@
             Alpine.data('main', () => ({
                 tablaPacientes:true,
                 addFormPaciente:false,
+                showDetallePaciente:false,
 
                 mostrarTablaPaciente(){
                     // 1- Mostrar la tabla pacientes
@@ -64,9 +70,16 @@
                     this.mostrarTablaPaciente();
                     this.esconderFormAddPaciente();
                 },
+                mostrarDetallePaciente(){
+                    this.showDetallePaciente = true;
+                    this.esconderTablaPaciente();
+                },
                 pacienteCreated(){
                     this.toast('success' , '¡Paciente registrado correctamente!')
                     this.resetVistaPacientes();
+                },
+                validarDataAddPaciente(){
+
                 },
                 toast(icon , title){
                     const Toast = Swal.mixin({
