@@ -2,8 +2,9 @@
 
 namespace App\Models\Domicilios;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Pacientes\PacienteModel;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class DomicilioModel extends Model
 {
@@ -23,5 +24,10 @@ class DomicilioModel extends Model
         'referencia',
         'id_paciente'
     ];
+
+
+    public function paciente(){
+        return $this->belongsTo(PacienteModel::class ,'id_paciente' , 'id' );
+    }
 
 }

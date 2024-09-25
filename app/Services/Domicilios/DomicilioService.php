@@ -12,8 +12,14 @@ class DomicilioService{
         $this->repository = $repository;
     }
 
+
+
+    /**
+     * Al momento de crear un domicilio asociado a un paciente, el array que nos envie el cliente
+     * debe de venir el id del paciente del domicilio que queremos registrar
+     */
     public function create(array $data){
-        $this->repository->create($data);
+        return $this->repository->create($data);
     }
 
 

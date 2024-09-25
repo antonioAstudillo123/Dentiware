@@ -24,4 +24,10 @@ class PacienteService{
     public function create(array $data){
         return $this->repository->create($data);
     }
+
+
+    //Obtenemos la información de un Paciente junto con la información de su domicilio para de esa manera obtener el detalle de este paciente
+    public function getDetailsPacient($id){
+        return $this->repository->getDetailsPacient($id);
+    }
 }

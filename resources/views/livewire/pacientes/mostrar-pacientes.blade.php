@@ -29,7 +29,7 @@
                                 <td>{{ $paciente->correo }}</td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <button x-on:click="mostrarDetallePaciente" type="button" class="btn btn-info fas fa-eye"></button>
+                                        <button wire:click="$dispatchTo('pacientes.detalle-paciente', 'setIdPaciente', { id: {{ $paciente->id }} })" x-on:click="mostrarDetallePaciente()" type="button" class="btn btn-info fas fa-eye"></button>
                                         <button type="button" class="btn btn-warning fas fa-edit"></button>
                                         <button type="button" class="btn btn-danger fas fa-trash-alt"></button>
                                     </div>

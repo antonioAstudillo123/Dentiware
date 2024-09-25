@@ -2,8 +2,9 @@
 
 namespace App\Models\Pacientes;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Domicilios\DomicilioModel;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class PacienteModel extends Model
 {
@@ -20,4 +21,9 @@ class PacienteModel extends Model
         'correo',
         'notas'
     ];
+
+
+    public function domicilio(){
+        return $this->hasOne(DomicilioModel::class , 'id_paciente' , 'id' );
+    }
 }

@@ -29,7 +29,7 @@
         </div>
 
         <div x-show="showDetallePaciente">
-            <livewire:pacientes.detalle-paciente />
+            <livewire:pacientes.detalle-paciente/>
         </div>
 
 
@@ -44,7 +44,6 @@
                 tablaPacientes:true,
                 addFormPaciente:false,
                 showDetallePaciente:false,
-
                 mostrarTablaPaciente(){
                     // 1- Mostrar la tabla pacientes
                     this.tablaPacientes = true;
@@ -62,13 +61,14 @@
                     this.addFormPaciente = true;
                 },
                 agregarPaciente(){
-                this.esconderTablaPaciente();
-                this.mostrarFormAddPaciente();
+                    this.esconderTablaPaciente();
+                    this.mostrarFormAddPaciente();
                 },
                 resetVistaPacientes(){
                     //Reseteamos la vista de pacientes a su estado inicial
                     this.mostrarTablaPaciente();
                     this.esconderFormAddPaciente();
+                    this.showDetallePaciente = false;
                 },
                 mostrarDetallePaciente(){
                     this.showDetallePaciente = true;
