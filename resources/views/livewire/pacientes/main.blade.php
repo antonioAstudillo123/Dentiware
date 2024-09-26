@@ -32,6 +32,15 @@
             <livewire:pacientes.detalle-paciente/>
         </div>
 
+        <div x-on:paciente-delete="pacienteDelete">
+            <livewire:pacientes.eliminar-paciente />
+        </div>
+
+        <div x-show="formEditPaciente">
+            <div x-on:paciente-updated="pacienteUpdate">
+                <livewire:pacientes.edit-paciente />
+            </div>
+        </div>
 
     </div>
 
@@ -44,6 +53,14 @@
                 tablaPacientes:true,
                 addFormPaciente:false,
                 showDetallePaciente:false,
+                formEditPaciente:false,
+                showFormEdit(){
+                    this.formEditPaciente = true;
+                    this.esconderTablaPaciente();
+                },
+                hideFormEdit(){
+                    this.formEditPaciente = false;
+                },
                 mostrarTablaPaciente(){
                     // 1- Mostrar la tabla pacientes
                     this.tablaPacientes = true;
@@ -69,6 +86,7 @@
                     this.mostrarTablaPaciente();
                     this.esconderFormAddPaciente();
                     this.showDetallePaciente = false;
+                    this.hideFormEdit();
                 },
                 mostrarDetallePaciente(){
                     this.showDetallePaciente = true;
@@ -78,8 +96,15 @@
                     this.toast('success' , '¡Paciente registrado correctamente!')
                     this.resetVistaPacientes();
                 },
+                pacienteUpdate(){
+                    this.toast('success' , '¡Paciente actualizado correctamente!')
+                    this.resetVistaPacientes();
+                },
                 validarDataAddPaciente(){
 
+                },
+                pacienteDelete(){
+                    this.toast('success' , '¡Paciente eliminado correctamente!')
                 },
                 toast(icon , title){
                     const Toast = Swal.mixin({

@@ -30,4 +30,19 @@ class PacienteService{
     public function getDetailsPacient($id){
         return $this->repository->getDetailsPacient($id);
     }
+
+
+    //Eliminamos un paciente del sistema
+    public function delete($id){
+        return $this->repository->delete($id);
+    }
+
+
+    //Actualizamos la información de un paciente
+    //El array que nos envíen debe de venir el id del paciente que queremos actualizar
+    public function update(array $data){
+        return $this->repository->update($data);
+    }
+
+
 }

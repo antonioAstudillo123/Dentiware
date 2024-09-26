@@ -17,7 +17,7 @@ class MostrarPacientes extends Component
         $this->service = $service;
     }
 
-    #[On('paciente-created')]
+    #[On('paciente-refresh-table')]
     #[Computed]
     public function pacientes()
     {

@@ -23,4 +23,13 @@ class DomicilioService{
     }
 
 
+    /**
+     * Actualizamos la informacion de un domicilio para un paciente
+     */
+
+    public function update(array $data){
+        return $this->repository->update($data);
+    }
+
+
 }

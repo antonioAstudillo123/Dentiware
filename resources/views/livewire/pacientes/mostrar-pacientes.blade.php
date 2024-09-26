@@ -30,8 +30,8 @@
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <button wire:click="$dispatchTo('pacientes.detalle-paciente', 'setIdPaciente', { id: {{ $paciente->id }} })" x-on:click="mostrarDetallePaciente()" type="button" class="btn btn-info fas fa-eye"></button>
-                                        <button type="button" class="btn btn-warning fas fa-edit"></button>
-                                        <button type="button" class="btn btn-danger fas fa-trash-alt"></button>
+                                        <button wire:click="$dispatchTo('pacientes.edit-paciente', 'setIdPacienteEdit', { id: {{ $paciente->id }} })" x-on:click="showFormEdit()"  type="button" class="btn btn-warning fas fa-edit"></button>
+                                        <button wire:click="$dispatchTo('pacientes.eliminar-paciente', 'delete', { id: {{ $paciente->id }} })" wire:confirm="Está seguro de que desea eliminar este paciente?" type="button" class="btn btn-danger fas fa-trash-alt"></button>
                                     </div>
                                 </td>
                             </tr>
