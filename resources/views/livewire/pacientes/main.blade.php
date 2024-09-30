@@ -11,9 +11,19 @@
                             <button x-on:click="agregarPaciente" class="btn btn-success">Agregar paciente</button>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
+
+
+
+
                             <ol class="breadcrumb float-sm-right">
-                                <input type="text" placeholder="Buscar paciente" class="form-control">
+                                <div class="input-group rounded">
+                                    <input @blur="filtrarPaciente(event)" type="search" class="form-control rounded" placeholder="Buscar paciente" aria-label="Search" aria-describedby="search-addon" />
+                                    <span class="input-group-text border-0" id="search-addon">
+                                      <i class="fas fa-search"></i>
+                                    </span>
+                                </div>
                             </ol>
+
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -106,12 +116,17 @@
                 pacienteDelete(){
                     this.toast('success' , '¡Paciente eliminado correctamente!')
                 },
+                filtrarPaciente(e){
+                   // alert(e.target.value)
+                   $dispatch('paciente-filtre-table' ,{ search: e.target.value });
+                   console.log('entra aqui');
+                },
                 toast(icon , title){
                     const Toast = Swal.mixin({
                         toast: true,
                         position: "top-end",
                         showConfirmButton: false,
-                        timer: 3000,
+                        timer: 1500,
                         timerProgressBar: true,
                         didOpen: (toast) => {
                             toast.onmouseenter = Swal.stopTimer;

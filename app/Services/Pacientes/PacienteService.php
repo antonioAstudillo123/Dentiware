@@ -20,6 +20,17 @@ class PacienteService{
     }
 
 
+    //Obtenemos todos los pacientes que cumplan o coincidan con el valor ingresado por el usuario dentro del input de busqueda en la tabla pacientes
+    public function searchPaciente(string $search){
+        return $this->all()
+        ->where('nombre' , 'LIKE' , '%'. $search . '%')
+        ->orWhere('apellido_paterno' , 'LIKE' , '%'. $search . '%' )
+        ->orWhere('apellido_materno' , 'LIKE' , '%'. $search . '%' )
+        ->orWhere('telefono' , 'LIKE' , '%'. $search . '%' )
+        ->orWhere('correo' , 'LIKE' , '%'. $search . '%' );
+    }
+
+
     //Creamos un paciente en el sistema
     public function create(array $data){
         return $this->repository->create($data);
