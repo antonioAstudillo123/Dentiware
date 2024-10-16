@@ -27,13 +27,12 @@ class MostrarPacientes extends Component
         if($this->search !== ''){
             return $this->service->searchPaciente($this->search)->paginate(10);
         }
-
         return $this->service->all()->paginate(10);
     }
 
-
     #[On('paciente-filtre-table')]
     public function prueba($search){
+        $this->resetPage();
         $this->search = $search;
     }
 

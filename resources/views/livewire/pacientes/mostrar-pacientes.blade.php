@@ -29,9 +29,32 @@
                                 <td>{{ $paciente->correo }}</td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <button wire:click="$dispatchTo('pacientes.detalle-paciente', 'setIdPaciente', { id: {{ $paciente->id }} })" x-on:click="mostrarDetallePaciente()" type="button" class="btn btn-info fas fa-eye"></button>
-                                        <button wire:click="$dispatchTo('pacientes.edit-paciente', 'setIdPacienteEdit', { id: {{ $paciente->id }} })" x-on:click="showFormEdit()"  type="button" class="btn btn-warning fas fa-edit"></button>
-                                        <button wire:click="$dispatchTo('pacientes.eliminar-paciente', 'delete', { id: {{ $paciente->id }} })" wire:confirm="Está seguro de que desea eliminar este paciente?" type="button" class="btn btn-danger fas fa-trash-alt"></button>
+                                        <button type="button"
+                                        class="btn btn-primary fas fa-clock"
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="top"
+                                        title="Crear cita al paciente"
+                                        x-on:click="mostrarFormCreateCita()"
+                                        >
+                                    </button>
+                                        <button wire:click="$dispatchTo('pacientes.detalle-paciente', 'setIdPaciente', { id: {{ $paciente->id }} })"
+                                            x-on:click="mostrarDetallePaciente()"
+                                            type="button"
+                                            class="btn btn-info fas fa-eye"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar la información del paciente">
+                                        </button>
+                                        <button wire:click="$dispatchTo('pacientes.edit-paciente', 'setIdPacienteEdit', { id: {{ $paciente->id }} })"
+                                            x-on:click="showFormEdit()"
+                                            type="button"
+                                            class="btn btn-warning fas fa-edit"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Editar la información del paciente">
+                                        </button>
+                                        <button wire:click="$dispatchTo('pacientes.eliminar-paciente', 'delete', { id: {{ $paciente->id }} })"
+                                            wire:confirm="Está seguro de que desea eliminar este paciente?"
+                                            type="button"
+                                            class="btn btn-danger fas fa-trash-alt"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar paciente del sistema">
+                                        </button>
                                     </div>
                                 </td>
                             </tr>

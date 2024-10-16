@@ -11,13 +11,9 @@
                             <button x-on:click="agregarPaciente" class="btn btn-success">Agregar paciente</button>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
-
-
-
-
                             <ol class="breadcrumb float-sm-right">
                                 <div class="input-group rounded">
-                                    <input @blur="filtrarPaciente(event)" type="search" class="form-control rounded" placeholder="Buscar paciente" aria-label="Search" aria-describedby="search-addon" />
+                                    <input @keyup.enter="filtrarPaciente(event)" type="search" class="form-control rounded" placeholder="Buscar paciente" aria-label="Search" aria-describedby="search-addon" />
                                     <span class="input-group-text border-0" id="search-addon">
                                       <i class="fas fa-search"></i>
                                     </span>
@@ -52,6 +48,16 @@
             </div>
         </div>
 
+
+        <div x-show="showCreateCita">
+            <div>
+                <livewire:pacientes.crear-cita />
+            </div>
+        </div>
+
+
+
+
     </div>
 
 </div>
@@ -63,6 +69,7 @@
                 tablaPacientes:true,
                 addFormPaciente:false,
                 showDetallePaciente:false,
+                showCreateCita:false,
                 formEditPaciente:false,
                 showFormEdit(){
                     this.formEditPaciente = true;
@@ -82,6 +89,10 @@
                 esconderTablaPaciente(){
                     //Esconder la tabla de pacientes
                     this.tablaPacientes = false;
+                },
+                mostrarFormCreateCita(){
+                    this.showCreateCita = true;
+                    this.esconderTablaPaciente();
                 },
                 mostrarFormAddPaciente(){
                     //Mostramos el form de agregar paciente
@@ -110,16 +121,11 @@
                     this.toast('success' , '¡Paciente actualizado correctamente!')
                     this.resetVistaPacientes();
                 },
-                validarDataAddPaciente(){
-
-                },
                 pacienteDelete(){
                     this.toast('success' , '¡Paciente eliminado correctamente!')
                 },
                 filtrarPaciente(e){
-                   // alert(e.target.value)
-                   $dispatch('paciente-filtre-table' ,{ search: e.target.value });
-                   console.log('entra aqui');
+                    $dispatch('paciente-filtre-table' ,{ search: e.target.value });
                 },
                 toast(icon , title){
                     const Toast = Swal.mixin({

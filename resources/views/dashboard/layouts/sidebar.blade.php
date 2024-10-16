@@ -19,7 +19,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
             <a href="#" class="nav-link">
-                <i class=" nav-icon fas fa-user-injured"></i>
+                <i class=" nav-icon fas fa-hospital-user"></i>
 
               <p>
                 Pacientes
@@ -31,6 +31,27 @@
                 <a href="{{ route('pacientes.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gestionar pacientes</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class=" nav-icon fas fa-user-md"></i>
+
+              <p>
+                Dentistas
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('pacientes.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gestionar dentistas</p>
                 </a>
               </li>
 
