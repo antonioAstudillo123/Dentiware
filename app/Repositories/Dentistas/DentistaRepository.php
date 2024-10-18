@@ -17,5 +17,9 @@ class DentistaRepository{
         return DentistaModel::create($data);
     }
 
+    public function delete(int $id){
+        return DentistaModel::destroy($id);
+    }
+
 
 }

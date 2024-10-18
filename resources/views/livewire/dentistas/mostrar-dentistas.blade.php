@@ -42,7 +42,7 @@
                                                 class="btn btn-warning fas fa-edit"
                                                 data-bs-toggle="tooltip" data-bs-placement="top" title="Editar la información del dentista">
                                             </button>
-                                            <button wire:click=""
+                                            <button wire:click="$dispatchTo('dentistas.eliminar-dentista', 'delete', { id: {{ $dentista->id }} })"
                                                 wire:confirm="Está seguro de que desea eliminar este dentista?"
                                                 type="button"
                                                 class="btn btn-danger fas fa-trash-alt"

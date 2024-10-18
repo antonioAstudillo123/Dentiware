@@ -26,6 +26,12 @@ class DentistaService{
     }
 
 
+    //Eliminamos un dentista del sistema
+    public function delete(int $id){
+        return $this->repository->delete($id);
+    }
+
+
 
 
 }

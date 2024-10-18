@@ -36,6 +36,10 @@
             </div>
         </div>
 
+        <div x-on:dentista-delete="dentistDeleted">
+            <livewire:dentistas.eliminar-dentista />
+        </div>
+
 
 
 
@@ -67,6 +71,9 @@
                 dentistaCreated(){
                     this.resetDom();
                     this.toast('success' , 'El dentista fue registrado correctamente!');
+                },
+                dentistDeleted(){
+                    this.toast('success' , 'El dentista fue eliminado correctamente!');
                 },
                 toast(icon , title){
                     const Toast = Swal.mixin({
