@@ -31,6 +31,16 @@ class DentistaService{
         return $this->repository->delete($id);
     }
 
+    //Obtenemos la informacion de un dentista
+    public function getDentista(int $id){
+        return $this->repository->getDentista($id);
+    }
+
+    //actualizamos la informacion de un dentista
+    public function update(array $data , int $id){
+        return $this->repository->update($data , $id);
+    }
+
 
 
 

@@ -21,5 +21,14 @@ class DentistaRepository{
         return DentistaModel::destroy($id);
     }
 
+    public function getDentista(int $id){
+        return DentistaModel::findOrFail($id);
+    }
+
+
+    public function update(array $data , $id){
+        return DentistaModel::where('id' , $id)->update($data);
+    }
+
 
 }

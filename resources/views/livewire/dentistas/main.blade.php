@@ -36,6 +36,13 @@
             </div>
         </div>
 
+
+        <div x-show="formEditDentista">
+            <div x-on:dentista-updated="dentistaUpdated">
+                <livewire:dentistas.editar-dentista />
+            </div>
+        </div>
+
         <div x-on:dentista-delete="dentistDeleted">
             <livewire:dentistas.eliminar-dentista />
         </div>
@@ -51,6 +58,7 @@
             Alpine.data('main', () => ({
                 showFormCreateDentista:false,
                 tableDentistas:true,
+                formEditDentista:false,
                 agregarDentista(){
                     this.showFormCreateDentista = true;
                     this.hideTableDentistas();
@@ -64,13 +72,25 @@
                 showTableDentistas(){
                     this.tableDentistas = true;
                 },
+                showFormEditDentista(){
+                    this.hideTableDentistas();
+                    this.formEditDentista = true;
+                },
+                hideFormEditDentista(){
+                    this.formEditDentista = false;
+                },
                 resetDom(){
                     this.showTableDentistas();
                     this.hideFormCreateDentista();
+                    this.hideFormEditDentista();
                 },
                 dentistaCreated(){
                     this.resetDom();
                     this.toast('success' , 'El dentista fue registrado correctamente!');
+                },
+                dentistaUpdated(){
+                    this.resetDom();
+                    this.toast('success' , 'El dentista fue actualizado correctamente!');
                 },
                 dentistDeleted(){
                     this.toast('success' , 'El dentista fue eliminado correctamente!');

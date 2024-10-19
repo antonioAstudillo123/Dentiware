@@ -36,8 +36,8 @@
                                                 class="btn btn-info fas fa-eye"
                                                 data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar la información del dentista">
                                             </button>
-                                            <button wire:click=""
-                                                x-on:click=""
+                                            <button wire:click="$dispatchTo('dentistas.editar-dentista', 'setDataDentista', { id: {{ $dentista->id }} })"
+                                                x-on:click="showFormEditDentista"
                                                 type="button"
                                                 class="btn btn-warning fas fa-edit"
                                                 data-bs-toggle="tooltip" data-bs-placement="top" title="Editar la información del dentista">
