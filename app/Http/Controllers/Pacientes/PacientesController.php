@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class PacientesController extends Controller
 {
     public function index(){
+        return 'Haciendo pruebas con git';
         return view('dashboard.pages.pacientes.gestionarPacientes');
     }
 }
