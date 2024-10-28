@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PacientesController extends Controller
 {
     public function index(){
-        return 'Mami te quiero mucho 2';
+        return 'Mami te quiero mucho 3';
         return view('dashboard.pages.pacientes.gestionarPacientes');
     }
 }
